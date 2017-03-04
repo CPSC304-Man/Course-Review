@@ -25,14 +25,14 @@
 
 
   <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <!-- navigation bar -->
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout__title">Home</span>
+        <span class="mdl-layout__title">Profile</span>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation mdl-layout--large-screen-only">
           <a href="index.html" class="mdl-navigation__link">Home</a>
@@ -54,23 +54,32 @@
 
     <main class="mdl-layout__content">
       <div class="page-content">
-        <form>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="username">
-            <label class="mdl-textfield__label" for="username">Username</label>
+        <div class="mdl-card mdl-shadow--8dp">
+          <form>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="userId" readonly disabled>
+              <label class="mdl-textfield__label" for="userId">User ID</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <textarea class="mdl-textfield__input" type="text" rows="3" id="bio" disabled></textarea>
+              <label class="mdl-textfield__label" for="bio">Bio</label>
+            </div>
+          </form>
+
+          <div class="mdl-card__actions mdl-card--border">
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="edit">
+              <input type="checkbox" id="edit" class="mdl-switch__input" onchange="editChange()">
+              <span class="mdl-switch__label">Edit</span>
+            </label>
+            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="save()">Save</a>
           </div>
-        </form>
-
-        <button onclick="connectDB()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Login</button>
-
-
-        <h1>Courses</h1>
-
+        </div>
       </div>
     </main>
   </div>
 
 
-  <script src="js/index.js"></script>
+  <script src="js/getUser.js"></script>
+  <script src="js/user.js"></script>
 </body>
 </html>
