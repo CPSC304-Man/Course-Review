@@ -25,14 +25,14 @@
 
 
   <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/course.css">
 </head>
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <!-- navigation bar -->
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout__title">Home</span>
+        <span class="mdl-layout__title">Courses</span>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation mdl-layout--large-screen-only">
           <a href="index.html" class="mdl-navigation__link">Home</a>
@@ -54,19 +54,27 @@
 
     <main class="mdl-layout__content">
       <div class="page-content">
-        <form>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="username">
-            <label class="mdl-textfield__label" for="username">Username</label>
-          </div>
-        </form>
-
-        <button onclick="connectDB()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Login</button>
+        <table id="courseTable" class="mdl-data-table mdl-js-data-table mdl-shadow--8dp">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Course_ID</th>
+              <th class="mdl-data-table__cell--non-numeric">Department</th>
+              <th class="mdl-data-table__cell--non-numeric">Code</th>
+              <th class="mdl-data-table__cell--non-numeric">Semester</th>
+              <th class="mdl-data-table__cell--non-numeric">Professor_ID</th>
+              <th class="mdl-data-table__cell--non-numeric">TA_ID</th>
+              <th class="mdl-data-table__cell--non-numeric">Average</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
       </div>
     </main>
   </div>
 
 
-  <script src="js/index.js"></script>
+  <script src="js/getUser.js"></script>
+  <script src="js/course.js"></script>
 </body>
 </html>

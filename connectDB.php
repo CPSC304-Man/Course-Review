@@ -1,6 +1,6 @@
 <?php
-$testSuccessDBConnection = array(connect=>true);
-$testFailDBConnection = array(connect=>false, connection=>array(message=>"Failed to connect to the database"));
+$TEST_DB_CONNECTION_SUCCESS_JSON = "{\"connect\":true}";
+$TEST_DB_CONNECTION_FAIL_JSON = "{\"connect\":false,\"connection\":{message:\"Failed to connect to the database\"}}";
 
 function connectDB() {
   $dbConnection = array();
@@ -18,17 +18,20 @@ function connectDB() {
   return $dbConnection;
 }
 
+
+/*
 if ($_GET["test"] === "test") {
   $dbConnection = connectDB();
   if ($dbConnection["connect"]) {
-    echo json_encode($testSuccessDBConnection);
+    echo $TEST_DB_CONNECTION_SUCCESS_JSON;
   } else {
     echo json_encode($dbConnection);
   }
   OCILogoff($dbConnection.connection);
 } elseif ($_GET["test"] === "true") {
-  echo json_encode($testSuccessDBConnection);
+  echo $TEST_DB_CONNECTION_SUCCESS_JSON;
 } elseif ($_GET["test"] === "false") {
-  echo json_encode($testFailDBConnection);
+  echo $TEST_DB_CONNECTION_FAIL_JSON;
 }
+*/
 ?>
