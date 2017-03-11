@@ -1,3 +1,7 @@
 #courseTable {
     width: 100% !important;
 }
+
+#courseTable>tbody>tr>td {
+    vertical-align: middle !important;
+}

@@ -1,10 +1,6 @@
 <?php
 function getData($statement) {
-    $data = array();
-
-    while (($row = oci_fetch_array($statement)) != false) {
-        array_push($data, $row);
-    }
+    oci_fetch_all($statement, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
 
     return $data;
 }
