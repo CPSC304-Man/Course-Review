@@ -121,10 +121,10 @@ INSERT INTO Admin VALUES ('CPSCAdmin', 'CPSC');
 INSERT INTO Admin VALUES ('COMMAdmin', 'COMM');
 
 INSERT INTO Course VALUES ('CPSC304_2016W2', 'CPSC', '304', '2016 Winter Term 2', 'P00000001', 'TA00000001', '80.0');
-INSERT INTO Course VALUES ('CPSC304_2016W1', 'CPSC', '313', '2016 Winter Term 1', 'P00000001', 'TA00000001', '80.0');
-INSERT INTO Course VALUES ('CPSC313_2016W2', 'CPSC', '317', '2016 Winter Term 2', 'P00000002', 'TA00000002', '70.0');
-INSERT INTO Course VALUES ('CPSC317_2016W2', 'CPSC', '294', '2016 Winter Term 2', 'P00000003', 'TA00000003', '60.0');
-INSERT INTO Course VALUES ('COMM294_2016W2', 'COMM', '304', '2016 Winter Term 2', 'P00000004', 'TA00000004', '50.0');
+INSERT INTO Course VALUES ('CPSC304_2016W1', 'CPSC', '304', '2016 Winter Term 1', 'P00000001', 'TA00000001', '80.0');
+INSERT INTO Course VALUES ('CPSC313_2016W2', 'CPSC', '313', '2016 Winter Term 2', 'P00000002', 'TA00000002', '70.0');
+INSERT INTO Course VALUES ('CPSC317_2016W2', 'CPSC', '317', '2016 Winter Term 2', 'P00000003', 'TA00000003', '60.0');
+INSERT INTO Course VALUES ('COMM294_2016W2', 'COMM', '294', '2016 Winter Term 2', 'P00000004', 'TA00000004', '50.0');
 
 INSERT INTO CourseDetails VALUES ('CPSC', '304', 'Introduction to Relational Databases', 'Introduction to Relational Databases', 'CPSCAdmin', NULL);
 INSERT INTO CourseDetails VALUES ('CPSC', '313', 'Computer Hardware and Operating Systems', 'Computer Hardware and Operating Systems', 'CPSCAdmin', NULL);

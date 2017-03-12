@@ -5,8 +5,8 @@ var user = getUser(function(userId) {
 
 
 $(function() {
-    $('#rate-deadline').datepicker();
-    $('#review-deadline').datepicker();
+    $('#rate-deadline').datepicker({dateFormat: 'dd-M-y'});
+    $('#review-deadline').datepicker({dateFormat: 'dd-M-y'});
 });
 
 
@@ -41,5 +41,16 @@ function addReviewCourse() {
     var reviewDeadline = $('#review-deadline')[0].value;
     console.log(rateDeadline, reviewDeadline);
 
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(JSON.parse(this.responseText));
 
+            window.open("course.html", "_self");
+        }
+    };
+
+    xmlhttp.open('POST', 'addReviewCourse.php', true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send('course_id='+course_id+'&rate_deadline='+rateDeadline+'&review_deadline='+reviewDeadline);
 }
