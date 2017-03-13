@@ -98,24 +98,37 @@ CREATE TABLE Recommend (
 );
 
 
-INSERT INTO Professor VALUES ('P00000001', 'Professor 1');
-INSERT INTO Professor VALUES ('P00000002', 'Professor 2');
-INSERT INTO Professor VALUES ('P00000003', 'Professor 3');
-INSERT INTO Professor VALUES ('P00000004', 'Professor 4');
-INSERT INTO Professor VALUES ('P00000005', 'Professor 5');
+INSERT INTO Professor VALUES ('P00000001', 'Hazra Imran');
+INSERT INTO Professor VALUES ('P00000002', 'Mike Feely');
+INSERT INTO Professor VALUES ('P00000003', 'Donal Acton');
+INSERT INTO Professor VALUES ('P00000004', 'Rafael Lopes Rogo');
+INSERT INTO Professor VALUES ('P00000005', 'Laks Lashamana');
+INSERT INTO Professor VALUES ('P00000006', 'Gregor Kiczales');
+INSERT INTO Professor VALUES ('P00000007', 'Steven Wolfman');
+INSERT INTO Professor VALUES ('P00000007', 'Patrice Belleville');
+
 
 INSERT INTO Student VALUES ('28144970', 'CHAU Tsun Man', 'tmchau@connect.ust.hk');
-INSERT INTO Student VALUES ('00000001', 'Student 1', 'student1@ubc.ca');
-INSERT INTO Student VALUES ('00000002', 'Student 2', 'student2@ubc.ca');
-INSERT INTO Student VALUES ('00000003', 'Student 3', 'student3@ubc.ca');
-INSERT INTO Student VALUES ('00000004', 'Student 4', 'student4@ubc.ca');
-INSERT INTO Student VALUES ('00000005', 'Student 5', 'student5@ubc.ca');
+INSERT INTO Student VALUES ('00000001', 'Rachel Fishman', 'rachelfishman@ubc.ca');
+INSERT INTO Student VALUES ('00000002', 'Harry Potter', 'potter@ubc.ca');
+INSERT INTO Student VALUES ('00000003', 'Ron Weasley', 'rweasley@ubc.ca');
+INSERT INTO Student VALUES ('00000004', 'Harmione Granger', 'granger@ubc.ca');
+INSERT INTO Student VALUES ('00000005', 'Albus Dumbeldore', 'dumbledore@ubc.ca');
+INSERT INTO Student VALUES ('00000006', 'Draco Malfoy', 'malfoy@ubc.ca');
+INSERT INTO Student VALUES ('00000007', 'Cedric Diggory', 'diggory@ubc.ca');
+INSERT INTO Student VALUES ('00000008', 'Fred Weasley', 'fweasley@ubc.ca');
+INSERT INTO Student VALUES ('00000009', 'Ginny Weasley', 'gweasley@ubc.ca');
+INSERT INTO Student VALUES ('00000010', 'Oliver Wood', 'wood@ubc.ca');
+INSERT INTO Student VALUES ('00000011', 'Katie Bell', 'bell@ubc.ca');
+INSERT INTO Student VALUES ('00000012', 'Draco Malfoy', 'draco@ubc.ca');
 
-INSERT INTO TA VALUES ('TA00000001', 'TA 1');
-INSERT INTO TA VALUES ('TA00000002', 'TA 2');
-INSERT INTO TA VALUES ('TA00000003', 'TA 3');
-INSERT INTO TA VALUES ('TA00000004', 'TA 4');
-INSERT INTO TA VALUES ('TA00000005', 'TA 5');
+
+INSERT INTO TA VALUES ('TA00000001', 'Niall Horad');
+INSERT INTO TA VALUES ('TA00000002', 'Liam Payne');
+INSERT INTO TA VALUES ('TA00000003', 'Louis Tomlinson');
+INSERT INTO TA VALUES ('TA00000004', 'Harry Styles');
+INSERT INTO TA VALUES ('TA00000005', 'Zayne Malik');
+
 
 INSERT INTO Admin VALUES ('CPSCAdmin', 'CPSC');
 INSERT INTO Admin VALUES ('COMMAdmin', 'COMM');
@@ -125,8 +138,15 @@ INSERT INTO Course VALUES ('CPSC304_2016W1', 'CPSC', '304', '2016 Winter Term 1'
 INSERT INTO Course VALUES ('CPSC313_2016W2', 'CPSC', '313', '2016 Winter Term 2', 'P00000002', 'TA00000002', '70.0');
 INSERT INTO Course VALUES ('CPSC317_2016W2', 'CPSC', '317', '2016 Winter Term 2', 'P00000003', 'TA00000003', '60.0');
 INSERT INTO Course VALUES ('COMM294_2016W2', 'COMM', '294', '2016 Winter Term 2', 'P00000004', 'TA00000004', '50.0');
+INSERT INTO Course VALUES ('CPSC110_2016W1', 'CPSC', '110', '2016 Winter Term 1', 'P00000006', 'TA00000001', '55.0');
+INSERT INTO Course VALUES ('CPSC121_2016W2', 'CPSC', '121', '2016 Winter Term 2', 'P00000007', 'TA00000002', '70.0');
+INSERT INTO Course VALUES ('CPSC121_2015W2', 'CPSC', '121', '2016 Winter Term 2', 'P00000008', 'TA00000002', '75.0');
+
+
 
 INSERT INTO CourseDetails VALUES ('CPSC', '304', 'Introduction to Relational Databases', 'Introduction to Relational Databases', 'CPSCAdmin', NULL);
 INSERT INTO CourseDetails VALUES ('CPSC', '313', 'Computer Hardware and Operating Systems', 'Computer Hardware and Operating Systems', 'CPSCAdmin', NULL);
 INSERT INTO CourseDetails VALUES ('CPSC', '317', 'Internet Computing', 'Internet Computing', 'CPSCAdmin', NULL);
 INSERT INTO CourseDetails VALUES ('COMM', '294', 'Managerial Accounting', 'Managerial Accounting', 'COMMAdmin', NULL);
+INSERT INTO CourseDetails VALUES ('CPSC', '110', 'Computation, Programs, and Programming', 'Computation, Programs, and Programming', 'CPSCAdmin', NULL);
+INSERT INTO CourseDetails VALUES ('CPSC', '121', 'Models of Computation', 'Models of Computation', 'CPSCAdmin', NULL);
