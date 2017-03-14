@@ -22,7 +22,6 @@ if ($dbConnection["connect"]) {
     // get the connection
     $connection = $dbConnection["connection"];
 
-    // $sql = "INSERT INTO ReviewCourse VALUES ('CPSC304_2016W1', '12-Mar-17', '12-Mar-17')";
     $sql = "INSERT INTO ReviewCourse VALUES (:course_id, :rate_deadline, :review_deadline)";
     $variables[":course_id"] = $_POST["course_id"];
     $variables[":rate_deadline"] = $_POST["rate_deadline"];

@@ -23,7 +23,9 @@ var coursesData;
                         '<td class="mdl-data-table__cell--non-numeric">' + coursesData[i].SEMESTER + '</td>' +
                         '<td class="mdl-data-table__cell--non-numeric">' + coursesData[i].PROFESSOR_ID + '</td>' +
                         '<td class="mdl-data-table__cell--non-numeric">' + coursesData[i].TA_ID + '</td>' +
-                        '<td class="mdl-data-table__cell--non-numeric">' + coursesData[i].AVERAGE + '</td>';
+                        '<td class="mdl-data-table__cell--non-numeric">' + coursesData[i].AVERAGE + '</td>' +
+                        '<td class="mdl-data-table__cell--non-numeric"><a href="rate.html?course_id='+coursesData[i].COURSE_ID+'" target="_self"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Review</button></td>' +
+                        '<td class="mdl-data-table__cell--non-numeric"><a href="review.html?course_id='+coursesData[i].COURSE_ID+'" target="_self"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Rate</button></td>';
 
                 if (coursesData[i].RATE_DEADLINE === null || coursesData[i].REVIEW_DEADLINE === null) {
                     $('#courseTable>tbody').append(
