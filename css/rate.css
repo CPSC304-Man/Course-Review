@@ -1,0 +1,13 @@
+.mdl-card {
+    width: 100%;
+    max-width: 896px;
+    margin: auto;
+}
+
+.mdl-card form {
+    padding: 16px;
+}
+
+.mdl-card form .mdl-textfield {
+    width: 100%;
+}

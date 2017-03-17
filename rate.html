@@ -54,7 +54,36 @@
 
     <main class="mdl-layout__content">
       <div class="page-content">
+        <div class="mdl-card mdl-shadow--8dp">
+          <form class="form">
+            <div class="mdl-textfield mdl-js-textfield">
+              <textarea class="mdl-textfield__input" type="text" rows= "3" id="course-comment"></textarea>
+              <label class="mdl-textfield__label" for="course-comment">Course comment</label>
+            </div>
+            <div class="form-group">
+              <label for="course-rate-input">Course rate (<span >5</span>)</label>
+              <input id="course-rate-input" class="mdl-slider mdl-js-slider" oninput="rateChange('course-rate')" type="range" min="1" max="10" value="5" tabindex="0">
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+              <textarea class="mdl-textfield__input" type="text" rows= "3" id="professor-comment"></textarea>
+              <label class="mdl-textfield__label" for="professor-comment">Professor comment</label>
+            </div>
+            <div class="form-group">
+              <label for="professor-rate-input">Professor rate (<span id="professor-rate-label">5</span>)</label>
+              <input id="professor-rate-input" class="mdl-slider mdl-js-slider" oninput="rateChange('professor-rate')" type="range" min="1" max="10" value="5" tabindex="0">
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+              <textarea class="mdl-textfield__input" type="text" rows= "3" id="ta-comment"></textarea>
+              <label class="mdl-textfield__label" for="ta-comment">TA comment</label>
+            </div>
+            <div class="form-group">
+              <label for="ta-rate-input">TA rate (<span id="ta-rate-label">5</span>)</label>
+              <input id="ta-rate-input" class="mdl-slider mdl-js-slider" oninput="rateChange('ta-rate')" type="range" min="1" max="10" value="5" tabindex="0">
+            </div>
+          </form>
 
+          <button onclick="rate()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Submit Feedback</button>
+        </div>
       </div>
     </main>
   </div>
