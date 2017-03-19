@@ -80,65 +80,54 @@
               <label for="ta-rate-input">TA rate (<span id="ta-rate-label">5</span>)</label>
               <input id="ta-rate-input" class="mdl-slider mdl-js-slider" oninput="rateChange('ta-rate')" type="range" min="1" max="10" value="5" tabindex="0">
             </div>
-                          
-                <br><br>
-                Was the professor was effective in communicating course material?<br>
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="yes">
-                    <input type="radio" id="yes" class="mdl-radio__button" name="prof_communication" value="1" checked>
+
+            <div class="form-check">
+                <p>Was the professor was effective in communicating course material?</p>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="prof-com-yes">
+                    <input type="radio" id="prof-com-yes" class="mdl-radio__button" name="prof-com-yes" value="1" checked>
                     <span class="mdl-radio__label">Yes</span>
                 </label>
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="no">
-                    <input type="radio" id="no" class="mdl-radio__button" name="prof_communication" value="0">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="prof-com-no">
+                    <input type="radio" id="prof-com-no" class="mdl-radio__button" name="prof-com-no" value="0">
                     <span class="mdl-radio__label">No</span>
                 </label>
-                
-                <br><br>
-                Were lectures helpful in understanding course material?<br>
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="yes">
-                    <input type="radio" id="yes" class="mdl-radio__button" name="lecture_helpful" value="1" checked>
+            </div>
+
+            <div class="form-check">
+                <p>Were lectures helpful in understanding course material?</p>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="lecture-helpful-yes">
+                    <input type="radio" id="lecture-helpful-yes" class="mdl-radio__button" name="lecture-helpful-yes" value="1" checked>
                     <span class="mdl-radio__label">Yes</span>
                 </label>
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="no">
-                    <input type="radio" id="no" class="mdl-radio__button" name="lecture_helpful" value="0">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="lecture-helpful-no">
+                    <input type="radio" id="lecture-helpful-no" class="mdl-radio__button" name="lecture-helpful-no" value="0">
                     <span class="mdl-radio__label">No</span>
-                    
-                <br><br>
-                Were lectures helpful in understanding course material?<br>
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="yes">
-                    <input type="radio" id="yes" class="mdl-radio__button" name="lecture_material" value="1" checked>
+                </label>
+            </div>
+
+            <div class="form-check">
+                <p>Did lecture material help you complete assignments?</p>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="lecture-assignment-yes">
+                    <input type="radio" id="lecture-assignment-yes" class="mdl-radio__button" name="lecture-assignment-yes" value="1" checked>
                     <span class="mdl-radio__label">Yes</span>
                 </label>
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="no">
-                    <input type="radio" id="no" class="mdl-radio__button" name="lecture_material" value="0">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="lecture-assignment-no">
+                    <input type="radio" id="lecture-assignment-no" class="mdl-radio__button" name="lecture-assignment-no" value="0">
                     <span class="mdl-radio__label">No</span>
                 </label>
-              
-                    <br><br>
-                    Did lecture material help you complete assignments?
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="yes">
-                    <input type="radio" id="yes" class="mdl-radio__button" name="lecture_assignments" value="1" checked>
+            </div>
+
+            <div class="form-check">
+                <p>Did lecture material help you study for exams?</p>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="lecture-exam-yes">
+                    <input type="radio" id="lecture-exam-yes" class="mdl-radio__button" name="lecture-exam-yes" value="1" checked>
                     <span class="mdl-radio__label">Yes</span>
                 </label>
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="no">
-                    <input type="radio" id="no" class="mdl-radio__button" name="lecture_assignments" value="0">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="lecture-exam-no">
+                    <input type="radio" id="lecture-exam-no" class="mdl-radio__button" name="lecture-exam-no" value="0">
                     <span class="mdl-radio__label">No</span>
                 </label>
-                    
-                    <br><br>
-                    Did lecture material help you study for exams?
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="">
-                    <input type="radio" id="yes" class="mdl-radio__button" name="lecture_exams" value="1" checked>
-                    <span class="mdl-radio__label">Yes</span>
-                </label>
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="no">
-                    <input type="radio" id="no" class="mdl-radio__button" name="lecture_exams" value="0">
-                    <span class="mdl-radio__label">No</span>
-                </label>
-                    
-                <br><br>
-            
-            
-            
+            </div>
           </form>
 
           <button onclick="rate()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Submit Feedback</button>
