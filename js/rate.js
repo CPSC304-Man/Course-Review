@@ -1,8 +1,8 @@
-var userID;
-getUser(function(userID) {
-    console.log(userID);
+var userId;
+getUser(function(uid) {
+    console.log(uid);
 
-    userID = userID;
+    userId = uid;
 });
 // TODO: authenticate the user
 
@@ -22,9 +22,15 @@ function rate() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(JSON.parse(this.responseText));
+            var response = JSON.parse(this.responseText);
+            console.log(response);
 
-            // window.open("course.html", "_self");
+            if (response.success) {
+                alert("Feedback submitted.");
+                window.open("course.html", "_self");
+            } else {
+                alert("Error.");
+            }
         }
     };
 
@@ -32,7 +38,7 @@ function rate() {
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(
             'course_id='+course_id+
-            '&student_id='+userID+
+            '&student_id='+userId+
             '&courseComment='+courseComment+
             '&courseRate='+courseRate+
             '&professorComment='+professorComment+
