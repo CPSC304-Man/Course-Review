@@ -55,6 +55,93 @@
     <main class="mdl-layout__content">
       <div class="page-content">
         <div id="feedback" class="mdl-card mdl-shadow--4dp">
+          <form class="form form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Course comment</label>
+              <div class="col-sm-1 control-label">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="course-comment-check">
+                  <input type="checkbox" id="course-comment-check" class="mdl-checkbox__input" checked>
+                </label>
+              </div>
+              <label class="col-sm-1 control-label">Like</label>
+              <div class="col-sm-7">
+                <input type="text" id="course-comment-filter" class="form-control" placeholder="Course comment filter">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Course rate</label>
+              <div class="col-sm-1 control-label">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="course-rate-check">
+                  <input type="checkbox" id="course-rate-check" class="mdl-checkbox__input" checked>
+                </label>
+              </div>
+              <label class="col-sm-2 control-label">Between</label>
+              <div class="col-sm-2">
+                <input type="number" id="course-rate-filter-min" class="form-control" value="1" min="1" max="10" placeholder="Course rate minimum">
+              </div>
+              <label class="col-sm-2 control-label">And</label>
+              <div class="col-sm-2">
+                <input type="number" id="course-rate-filter-max" class="form-control" value="10" min="1" max="10" placeholder="Course rate maximum">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Professor comment</label>
+              <div class="col-sm-1 control-label">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="professor-comment-check">
+                  <input type="checkbox" id="professor-comment-check" class="mdl-checkbox__input" checked>
+                </label>
+              </div>
+              <label class="col-sm-1 control-label">Like</label>
+              <div class="col-sm-7">
+                <input type="text" id="professor-comment-filter" class="form-control" placeholder="Professor comment filter">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Professor rate</label>
+              <div class="col-sm-1 control-label">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="professor-rate-check">
+                  <input type="checkbox" id="professor-rate-check" class="mdl-checkbox__input" checked>
+                </label>
+              </div>
+              <label class="col-sm-2 control-label">Between</label>
+              <div class="col-sm-2">
+                <input type="number" id="professor-rate-filter-min" class="form-control" value="1" min="1" max="10" placeholder="Professor rate minimum">
+              </div>
+              <label class="col-sm-2 control-label">And</label>
+              <div class="col-sm-2">
+                <input type="number" id="professor-rate-filter-max" class="form-control" value="10" min="1" max="10" placeholder="Professor rate maximum">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">TA comment</label>
+              <div class="col-sm-1 control-label">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="ta-comment-check">
+                  <input type="checkbox" id="ta-comment-check" class="mdl-checkbox__input" checked>
+                </label>
+              </div>
+              <label class="col-sm-1 control-label">Like</label>
+              <div class="col-sm-7">
+                <input type="text" id="ta-comment-filter" class="form-control" placeholder="TA comment filter">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">TA rate</label>
+              <div class="col-sm-1 control-label">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="ta-rate-check">
+                  <input type="checkbox" id="ta-rate-check" class="mdl-checkbox__input" checked>
+                </label>
+              </div>
+              <label class="col-sm-2 control-label">Between</label>
+              <div class="col-sm-2">
+                <input type="number" id="ta-rate-filter-min" class="form-control" value="1" min="1" max="10" placeholder="TA rate minimum">
+              </div>
+              <label class="col-sm-2 control-label">And</label>
+              <div class="col-sm-2">
+                <input type="number" id="ta-rate-filter-max" class="form-control" value="10" min="1" max="10" placeholder="TA rate maximum">
+              </div>
+            </div>
+          </form>
+
           <button onclick="getFeedback()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Get Feedback</button>
 
           <br>

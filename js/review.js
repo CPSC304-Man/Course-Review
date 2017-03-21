@@ -12,17 +12,53 @@ console.log(course_id);
 
 
 function getFeedback() {
+    var courseCommentFilter = $('#course-comment-filter')[0].value;
+    var courseRateFilterMin = $('#course-rate-filter-min')[0].value;
+    var courseRateFilterMax = $('#course-rate-filter-max')[0].value;
+    var professorCommentFilter = $('#professor-comment-filter')[0].value;
+    var professorRateFilterMin = $('#professor-rate-filter-min')[0].value;
+    var professorRateFilterMax = $('#professor-rate-filter-max')[0].value;
+    var taCommentFilter = $('#ta-comment-filter')[0].value;
+    var taRateFilterMin = $('#ta-rate-filter-min')[0].value;
+    var taRateFilterMax = $('#ta-rate-filter-max')[0].value;
+
+    var courseCommentCheck = $('#course-comment-check')[0].checked;
+    var courseRateCheck = $('#course-rate-check')[0].checked;
+    var professorCommentCheck = $('#professor-comment-check')[0].checked;
+    var professorRateCheck = $('#professor-rate-check')[0].checked;
+    var taCommentCheck = $('#ta-comment-check')[0].checked;
+    var taRateCheck = $('#ta-rate-check')[0].checked;
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);
             console.log(response);
 
+            $('#feedback>table').remove();
             $('#feedback').append(response.dataHtml);
         }
     };
 
-    xmlhttp.open('GET', 'getFeedback.php?course_id='+course_id, true);
+    xmlhttp.open(
+            'GET',
+            'getFeedback.php?course_id='+course_id+
+            '&courseCommentFilter='+courseCommentFilter+
+            '&courseRateFilterMin='+courseRateFilterMin+
+            '&courseRateFilterMax='+courseRateFilterMax+
+            '&professorCommentFilter='+professorCommentFilter+
+            '&professorRateFilterMin='+professorRateFilterMin+
+            '&professorRateFilterMax='+professorRateFilterMax+
+            '&taCommentFilter='+taCommentFilter+
+            '&taRateFilterMin='+taRateFilterMin+
+            '&taRateFilterMax='+taRateFilterMax+
+            '&courseCommentCheck='+courseCommentCheck+
+            '&courseRateCheck='+courseRateCheck+
+            '&professorCommentCheck='+professorCommentCheck+
+            '&professorRateCheck='+professorRateCheck+
+            '&taCommentCheck='+taCommentCheck+
+            '&taRateCheck='+taRateCheck,
+            true);
     xmlhttp.send();
 };
 
