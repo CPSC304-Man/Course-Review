@@ -54,16 +54,24 @@
 
     <main class="mdl-layout__content">
       <div class="page-content">
-          <div class="mdl-card mdl-shadow--8dp">
-            <form class="form">
-              <div class="mdl-textfield mdl-js-textfield">
-                <textarea class="mdl-textfield__input" type="text" rows= "5" id="review-comment"></textarea>
-                <label class="mdl-textfield__label" for="review-comment">Review comment</label>
-              </div>
-            </form>
+        <div id="feedback" class="mdl-card mdl-shadow--4dp">
+          <button onclick="getFeedback()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Get Feedback</button>
 
-            <button onclick="review()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Submit Review</button>
-          </div>
+          <br>
+        </div>
+
+        <br>
+
+        <div class="mdl-card mdl-shadow--16dp">
+          <form class="form">
+            <div class="mdl-textfield mdl-js-textfield">
+              <textarea class="mdl-textfield__input" type="text" rows= "5" id="review-comment"></textarea>
+              <label class="mdl-textfield__label" for="review-comment">Review comment</label>
+            </div>
+          </form>
+
+          <button onclick="review()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Submit Review</button>
+        </div>
       </div>
     </main>
   </div>

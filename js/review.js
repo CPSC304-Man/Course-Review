@@ -11,6 +11,22 @@ var course_id = getURLParameter('course_id');
 console.log(course_id);
 
 
+function getFeedback() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            console.log(response);
+
+            $('#feedback').append(response.dataHtml);
+        }
+    };
+
+    xmlhttp.open('GET', 'getFeedback.php?course_id='+course_id, true);
+    xmlhttp.send();
+};
+
+
 function review() {
     var reviewComment = $('#review-comment')[0].value;
 

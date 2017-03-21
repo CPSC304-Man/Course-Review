@@ -2,12 +2,18 @@
     width: 100%;
     max-width: 896px;
     margin: auto;
-}
-
-.mdl-card form {
     padding: 16px;
 }
 
 .mdl-card form .mdl-textfield {
     width: 100%;
+}
+
+#feedback-table {
+    width: 100% !important;
+}
+
+#feedback-table>tbody>tr>td {
+    white-space: normal;
+    vertical-align: middle !important;
 }
