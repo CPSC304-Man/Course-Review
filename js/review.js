@@ -1,5 +1,8 @@
-var user = getUser(function(userId) {
-    console.log(userId);
+var userId;
+getUser(function(uid) {
+    console.log(uid);
+
+    userId = uid;
 });
 // TODO: authenticate the user
 
@@ -9,16 +12,27 @@ console.log(course_id);
 
 
 function review() {
+    var reviewComment = $('#review-comment')[0].value;
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(JSON.parse(this.responseText));
+            var response = JSON.parse(this.responseText);
+            console.log(response);
 
-            window.open("course.html", "_self");
+            if (response.success) {
+                alert("Review submitted.");
+                window.open("course.html", "_self");
+            } else {
+                alert("Error.");
+            }
         }
     };
 
     xmlhttp.open('POST', 'review.php', true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xmlhttp.send('course_id='+course_id);
+    xmlhttp.send(
+            'course_id='+course_id+
+            '&professor_id='+userId+
+            '&reviewComment='+reviewComment);
 }
