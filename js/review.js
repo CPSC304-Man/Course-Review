@@ -66,6 +66,48 @@ function getFeedback() {
 };
 
 
+function getFeedbackSummary() {
+    var summaryType = $('input[name="feedback-summary-type"]:checked')[0].value;
+    var summaryData = $('input[name="feedback-summary-data"]:checked')[0].value;
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            console.log(response);
+
+            var summaryText = '';
+            summaryText += 'The ';
+            if (summaryType === 'avg') {
+                summaryText += 'average of ';
+            } else if (summaryType === 'max') {
+                summaryText += 'maximum of ';
+            } else if (summaryType === 'min') {
+                summaryText += 'minimum of ';
+            }
+            if (summaryData === 'courseRate') {
+                summaryText += 'course rate is ';
+            } else if (summaryData === 'professorRate') {
+                summaryText += 'professor rate is ';
+            } else if (summaryData === 'taRate') {
+                summaryText += 'TA rate is ';
+            }
+            summaryText += response.data;
+            summaryText += '.';
+            $('#feedback-summary-result').text(summaryText);
+        }
+    };
+
+    xmlhttp.open(
+            'GET',
+            'getFeedbackSummary.php?course_id='+course_id+
+            '&summaryType='+summaryType+
+            '&summaryData='+summaryData,
+            true);
+    xmlhttp.send();
+};
+
+
 function review() {
     var reviewComment = $('#review-comment')[0].value;
 

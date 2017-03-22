@@ -149,6 +149,61 @@
 
         <br>
 
+        <div id="feedback-summary" class="mdl-card mdl-shadow--4dp">
+          <form class="form form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Summary type</label>
+              <div class="col-sm-3">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-avg">
+                  <input type="radio" id="summary-avg" class="mdl-radio__button" name="feedback-summary-type" value="avg" checked>
+                  <span class="mdl-radio__label">Average</span>
+                </label>
+              </div>
+              <div class="col-sm-3">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-max">
+                  <input type="radio" id="summary-max" class="mdl-radio__button" name="feedback-summary-type" value="max">
+                  <span class="mdl-radio__label">Maximum</span>
+                </label>
+              </div>
+              <div class="col-sm-3">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-min">
+                  <input type="radio" id="summary-min" class="mdl-radio__button" name="feedback-summary-type" value="min">
+                  <span class="mdl-radio__label">Minimum</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Summary data</label>
+              <div class="col-sm-3">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-course-rate">
+                  <input type="radio" id="summary-course-rate" class="mdl-radio__button" name="feedback-summary-data" value="courseRate" checked>
+                  <span class="mdl-radio__label">Course rate</span>
+                </label>
+              </div>
+              <div class="col-sm-3">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-professor-rate">
+                  <input type="radio" id="summary-professor-rate" class="mdl-radio__button" name="feedback-summary-data" value="professorRate">
+                  <span class="mdl-radio__label">Professor rate</span>
+                </label>
+              </div>
+              <div class="col-sm-3">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-ta-rate">
+                  <input type="radio" id="summary-ta-rate" class="mdl-radio__button" name="feedback-summary-data" value="taRate">
+                  <span class="mdl-radio__label">TA rate</span>
+                </label>
+              </div>
+            </div>
+          </form>
+
+          <button onclick="getFeedbackSummary()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Get Feedback Summary</button>
+
+          <br>
+
+          <p id="feedback-summary-result"></p>
+        </div>
+
+        <br>
+
         <div class="mdl-card mdl-shadow--16dp">
           <form class="form">
             <div class="mdl-textfield mdl-js-textfield">
