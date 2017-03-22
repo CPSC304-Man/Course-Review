@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="teamform, team">
+  <!-- The meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Course Review</title>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <!-- Material Design Lite CDN -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/courseSummary.css">
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <!-- navigation bar -->
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout__title">Courses Summary</span>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a href="index.html" class="mdl-navigation__link">Home</a>
+          <a href="course.html" class="mdl-navigation__link">Courses</a>
+          <a href="courseSummary.html" class="mdl-navigation__link">Summary</a>
+          <a href="user.html" class="mdl-navigation__link">Profile</a>
+        </nav>
+      </div>
+    </header>
+    <!-- navigation drawer -->
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout__title">Course Review</span>
+      <nav class="mdl-navigation">
+        <a href="index.html" class="mdl-navigation__link">Home</a>
+        <a href="course.html" class="mdl-navigation__link">Courses</a>
+        <a href="courseSummary.html" class="mdl-navigation__link">Summary</a>
+        <a href="user.html" class="mdl-navigation__link">Profile</a>
+      </nav>
+    </div>
+
+
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <div id="course-summary" class="mdl-card mdl-shadow--4dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Courses Summary</h2>
+          </div>
+          <form class="form form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Type</label>
+              <div class="col-sm-2">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-avg">
+                  <input type="radio" id="summary-avg" class="mdl-radio__button" name="course-summary-type" value="avg" checked>
+                  <span class="mdl-radio__label">Average</span>
+                </label>
+              </div>
+              <div class="col-sm-2">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-max">
+                  <input type="radio" id="summary-max" class="mdl-radio__button" name="course-summary-type" value="max">
+                  <span class="mdl-radio__label">Maximum</span>
+                </label>
+              </div>
+              <div class="col-sm-2">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-min">
+                  <input type="radio" id="summary-min" class="mdl-radio__button" name="course-summary-type" value="min">
+                  <span class="mdl-radio__label">Minimum</span>
+                </label>
+              </div>
+              <div class="col-sm-2">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-avg">
+                  <input type="radio" id="summary-count" class="mdl-radio__button" name="course-summary-type" value="count">
+                  <span class="mdl-radio__label">Count</span>
+                </label>
+              </div>
+              <div class="col-sm-2">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-avg">
+                  <input type="radio" id="summary-sum" class="mdl-radio__button" name="course-summary-type" value="sum">
+                  <span class="mdl-radio__label">Sum</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Data</label>
+              <div class="col-sm-5">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-course-feedback">
+                  <input type="radio" id="summary-course-feedback" class="mdl-radio__button" name="summary-data" value="feedback" checked>
+                  <span class="mdl-radio__label">Number of feedbacks</span>
+                </label>
+              </div>
+              <div class="col-sm-5">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-course-rate">
+                  <input type="radio" id="summary-course-rate" class="mdl-radio__button" name="summary-data" value="courseRate" checked>
+                  <span class="mdl-radio__label">Course rate</span>
+                </label>
+              </div>
+              <div class="col-sm-5 offset-sm-2">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-professor-rate">
+                  <input type="radio" id="summary-professor-rate" class="mdl-radio__button" name="summary-data" value="professorRate">
+                  <span class="mdl-radio__label">Professor rate</span>
+                </label>
+              </div>
+              <div class="col-sm-5">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-ta-rate">
+                  <input type="radio" id="summary-ta-rate" class="mdl-radio__button" name="summary-data" value="taRate">
+                  <span class="mdl-radio__label">TA rate</span>
+                </label>
+              </div>
+            </div>
+          </form>
+
+          <button onclick="getCourseSummary()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Get Course Summary</button>
+
+          <br>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+  <script src="js/getUser.js"></script>
+  <script src="js/courseSummary.js"></script>
+</body>
+</html>
