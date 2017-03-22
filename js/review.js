@@ -11,6 +11,9 @@ var course_id = getURLParameter('course_id');
 console.log(course_id);
 
 
+var reviewId = '';
+
+
 function getFeedback() {
     var courseCommentFilter = $('#course-comment-filter')[0].value;
     var courseRateFilterMin = $('#course-rate-filter-min')[0].value;
@@ -73,7 +76,11 @@ function review() {
             console.log(response);
 
             if (response.success) {
-                alert("Review submitted.");
+                if (reviewId === '') {
+                    alert("Review submitted.");
+                } else {
+                    alert("Review updated.");
+                }
                 window.open("course.html", "_self");
             } else {
                 alert("Error.");
@@ -83,8 +90,46 @@ function review() {
 
     xmlhttp.open('POST', 'review.php', true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xmlhttp.send(
-            'course_id='+course_id+
-            '&professor_id='+userId+
-            '&reviewComment='+reviewComment);
+    if (reviewId === '') {
+        xmlhttp.send(
+                'course_id='+course_id+
+                '&professor_id='+userId+
+                '&reviewComment='+reviewComment);
+    } else {
+        xmlhttp.send(
+                'review_id='+reviewId+
+                '&course_id='+course_id+
+                '&professor_id='+userId+
+                '&reviewComment='+reviewComment);
+    }
 }
+
+
+(function() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            console.log(response);
+
+            if (response.success) {
+                if (response.data.length > 0) {
+                    alert("Review loaded.");
+
+                    reviewId = response.data[0]['REVIEW_ID'];
+                    console.log(reviewId);
+                    $('#review-comment').val(response.data[0]['REVIEWCOMMENT']);
+
+                    $('#submit-btn').text('Update Review');
+                }
+
+                $('#submit-btn').prop('disabled', false);
+            } else {
+                alert("Error.");
+            }
+        }
+    };
+
+    xmlhttp.open('GET', 'getReview.php?course_id='+course_id+'&professor_id='+userId, true);
+    xmlhttp.send();
+})();
