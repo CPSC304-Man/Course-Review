@@ -40,7 +40,7 @@ if ($dbConnection['connect']) {
                 $_GET['summaryType'] . "(rc.feedback_number) AS summary " .
                 "FROM Course c " .
                 "INNER JOIN " .
-                "(SELECT COUNT(*) AS feedback_number FROM RateCourse GROUP BY course_id) AS rc" .
+                "(SELECT course_id, COUNT(*) AS feedback_number FROM RateCourse GROUP BY course_id) rc " .
                 "ON c.course_id = rc.course_id ";
     }
     $sql .= "GROUP BY " . implode($parsedGroups, ", ");
@@ -73,18 +73,20 @@ if ($dbConnection['connect']) {
 
         $dataHtml .= '<tbody>';
         foreach ($data as $row) {
+            $dataHtml .= '<tr>';
             foreach ($groups as $group) {
                 if ($group === 'course_id') {
-                    $dataHtml .= '<th class="mdl-data-table__cell--non-numeric">' . $row['COURSE_ID'] . '</th>';
+                    $dataHtml .= '<td class="mdl-data-table__cell--non-numeric">' . $row['COURSE_ID'] . '</td>';
                 } else if ($group === 'level') {
-                    $dataHtml .= '<th class="mdl-data-table__cell--non-numeric">' . $row['SUBSTR(C.CODE,1,1)'] . '</th>';
+                    $dataHtml .= '<td class="mdl-data-table__cell--non-numeric">' . $row['SUBSTR(C.CODE,1,1)'] . '</td>';
                 } else if ($group === 'dept') {
-                    $dataHtml .= '<th class="mdl-data-table__cell--non-numeric">' . $row['DEPT'] . '</th>';
+                    $dataHtml .= '<td class="mdl-data-table__cell--non-numeric">' . $row['DEPT'] . '</td>';
                 } else if ($group === 'semester') {
-                    $dataHtml .= '<th class="mdl-data-table__cell--non-numeric">' . $row['SEMESTER'] . '</th>';
+                    $dataHtml .= '<td class="mdl-data-table__cell--non-numeric">' . $row['SEMESTER'] . '</td>';
                 }
             }
             $dataHtml .= '<td class="mdl-data-table__cell--non-numeric">' . strval($row['SUMMARY']) . '</td>';
+            $dataHtml .= '</tr>';
         }
         $dataHtml .= '</tbody>';
 
