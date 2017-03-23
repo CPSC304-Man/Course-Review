@@ -72,7 +72,7 @@ CREATE TABLE RateCourse (
     professorRate NUMBER,
     taComment VARCHAR(4000),
     taRate NUMBER,
-    CONSTRAINT RateCourse_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID),
+    CONSTRAINT RateCourse_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID) ON DELETE CASCADE,
     CONSTRAINT RateCourse_FK_student FOREIGN KEY (student_ID) REFERENCES Student(student_ID)
 );
 
@@ -81,7 +81,7 @@ CREATE TABLE Review (
     course_ID CHAR(14),
     professor_ID CHAR(9),
     reviewComment VARCHAR(4000),
-    CONSTRAINT Review_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID),
+    CONSTRAINT Review_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID) ON DELETE CASCADE,
     CONSTRAINT Review_FK_professor FOREIGN KEY (professor_ID) REFERENCES Professor(professor_ID)
 );
 
@@ -92,7 +92,7 @@ CREATE TABLE Recommend (
     recommendation VARCHAR(4000),
     admin_ID CHAR(7),
     complete DATE DEFAULT NULL,
-    CONSTRAINT Recomend_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID),
+    CONSTRAINT Recomend_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID) ON DELETE CASCADE,
     CONSTRAINT Recomend_FK_professor FOREIGN KEY (professor_ID) REFERENCES Professor(professor_ID),
     CONSTRAINT Recomend_FK_admin FOREIGN KEY (admin_ID) REFERENCES Admin(admin_ID)
 );

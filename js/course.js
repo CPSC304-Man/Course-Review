@@ -30,12 +30,12 @@ var coursesData;
                 if (coursesData[i].RATE_DEADLINE === null || coursesData[i].REVIEW_DEADLINE === null) {
                     $('#courseTable>tbody').append(
                             '<tr>' + tds +
-                            '<td class="mdl-data-table__cell--non-numeric"><a href="addReviewCourse.html?course_id='+coursesData[i].COURSE_ID+'" target="_self"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Add</button></td>' +
+                            '<td class="mdl-data-table__cell--non-numeric"><a href="addReviewCourse.html?course_id='+coursesData[i].COURSE_ID+'" target="_self"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Add</button></a></td>' +
                             '</tr>');
                 } else {
                     $('#courseTable>tbody').append(
                             '<tr>' + tds +
-                            '<td></td>' +
+                            '<td class="mdl-data-table__cell--non-numeric"><button onclick="deleteReviewCourse(\''+coursesData[i].COURSE_ID+'\')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Remove</button></td>' +
                             '</tr>');
                 }
             }
@@ -44,14 +44,36 @@ var coursesData;
 
     xmlhttp.open('GET', 'getCourse.php', true);
     xmlhttp.send();
-    
+})();
+
+
+function deleteReviewCourse(courseId) {
+    if (confirm('Delete? All rate, review, and recommendation records will also be deleted.')) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(this.responseText);
+                console.log(response);
+
+                if (response.success) {
+                    alert('Removed the course from review.');
+                    window.open("course.html", "_self");
+                } else {
+                    alert('Error.');
+                }
+            }
+        };
+
+        xmlhttp.open('GET', 'deleteReviewCourse.php?course_id='+courseId, true);
+        xmlhttp.send();
+    }
 }
 
- function filterCourse() {
+function filterCourse() {
     var dept = $('#department-code-filter')[0].value;
     var number = $('#course-number-filter')[0].value;
     var year = $('#year-filter')[0].value;
-    
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -63,14 +85,9 @@ var coursesData;
         }
     };
 
-    xmlhttp.open('GET', 'getCourse.php?dept='+dept+ 
+    xmlhttp.open('GET', 'getCourse.php?dept='+dept+
                  '&number='+number+
-                 '&year='+year, 
+                 '&year='+year,
                  true);
     xmlhttp.send();
 }
-
-)();
-
-
-
