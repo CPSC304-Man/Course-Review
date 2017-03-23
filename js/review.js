@@ -15,6 +15,11 @@ var reviewId = '';
 
 
 function getFeedback() {
+    if (userId.substring(0, 4) === 'test') {
+        alert('Please log in.');
+        return;
+    }
+
     var courseCommentFilter = $('#course-comment-filter')[0].value;
     var courseRateFilterMin = $('#course-rate-filter-min')[0].value;
     var courseRateFilterMax = $('#course-rate-filter-max')[0].value;
@@ -67,6 +72,11 @@ function getFeedback() {
 
 
 function getFeedbackSummary() {
+    if (userId.substring(0, 4) === 'test') {
+        alert('Please log in.');
+        return;
+    }
+
     var summaryType = $('input[name="feedback-summary-type"]:checked')[0].value;
     var summaryData = $('input[name="feedback-summary-data"]:checked')[0].value;
 
@@ -109,6 +119,11 @@ function getFeedbackSummary() {
 
 
 function review() {
+    if (userId.substring(0, 4) === 'test') {
+        alert('Please log in.');
+        return;
+    }
+
     var reviewComment = $('#review-comment')[0].value;
 
     var xmlhttp = new XMLHttpRequest();

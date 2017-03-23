@@ -12,6 +12,11 @@ console.log(course_id);
 
 
 function rate() {
+    if (userId.substring(0, 4) === 'test') {
+        alert('Please log in.');
+        return;
+    }
+
     var courseComment = $('#course-comment')[0].value;
     var courseRate = $('#course-rate-input')[0].value;
     var professorComment = $('#professor-comment')[0].value;
