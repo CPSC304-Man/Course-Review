@@ -45,3 +45,27 @@ var coursesData;
     xmlhttp.open('GET', 'getCourse.php', true);
     xmlhttp.send();
 })();
+
+function filterCourse() {
+    var dept = $('#department-code-filter')[0].value;
+    var number = $('#course-number-filter')[0].value;
+    var year = $('#year-filter')[0].value;
+    
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(JSON.parse(this.responseText));
+
+            coursesData = JSON.parse(this.responseText).data;
+
+            displayCourseData(courseData);
+        }
+    };
+
+    xmlhttp.open('GET', 'getCourse.php?dept='+dept+ 
+                 '&number='+number+
+                 '&year='+year, 
+                 true);
+    xmlhttp.send();
+}
+
