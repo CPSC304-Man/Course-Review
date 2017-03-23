@@ -35,3 +35,37 @@ function getCourseSummary() {
             true);
     xmlhttp.send();
 }
+
+
+function getCourseRatedByEveryStudent() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            console.log(response);
+
+            $('#course-rated-by-every-student-summary>table').remove();
+            $('#course-rated-by-every-student-summary').append(response.dataHtml);
+        }
+    };
+
+    xmlhttp.open('GET', 'getCourseRatedByEveryStudent.php', true);
+    xmlhttp.send();
+}
+
+
+function getCourseReviewedByProfessor() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            console.log(response);
+
+            $('#course-reviewed-by-professor-summary>table').remove();
+            $('#course-reviewed-by-professor-summary').append(response.dataHtml);
+        }
+    };
+
+    xmlhttp.open('GET', 'getCourseReviewedByProfessor.php', true);
+    xmlhttp.send();
+}
