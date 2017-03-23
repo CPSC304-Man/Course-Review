@@ -44,9 +44,10 @@ var coursesData;
 
     xmlhttp.open('GET', 'getCourse.php', true);
     xmlhttp.send();
-})();
+    
+}
 
-function filterCourse() {
+ function filterCourse() {
     var dept = $('#department-code-filter')[0].value;
     var number = $('#course-number-filter')[0].value;
     var year = $('#year-filter')[0].value;
@@ -68,4 +69,8 @@ function filterCourse() {
                  true);
     xmlhttp.send();
 }
+
+)();
+
+
 
