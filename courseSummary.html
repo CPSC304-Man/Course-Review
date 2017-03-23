@@ -65,31 +65,31 @@
               <label class="col-sm-2 control-label">Type</label>
               <div class="col-sm-2">
                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-avg">
-                  <input type="radio" id="summary-avg" class="mdl-radio__button" name="course-summary-type" value="avg" checked>
+                  <input type="radio" id="summary-avg" class="mdl-radio__button" name="course-summary-type" value="AVG" checked>
                   <span class="mdl-radio__label">Average</span>
                 </label>
               </div>
               <div class="col-sm-2">
                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-max">
-                  <input type="radio" id="summary-max" class="mdl-radio__button" name="course-summary-type" value="max">
+                  <input type="radio" id="summary-max" class="mdl-radio__button" name="course-summary-type" value="MAX">
                   <span class="mdl-radio__label">Maximum</span>
                 </label>
               </div>
               <div class="col-sm-2">
                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-min">
-                  <input type="radio" id="summary-min" class="mdl-radio__button" name="course-summary-type" value="min">
+                  <input type="radio" id="summary-min" class="mdl-radio__button" name="course-summary-type" value="MIN">
                   <span class="mdl-radio__label">Minimum</span>
                 </label>
               </div>
               <div class="col-sm-2">
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-avg">
-                  <input type="radio" id="summary-count" class="mdl-radio__button" name="course-summary-type" value="count">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-count">
+                  <input type="radio" id="summary-count" class="mdl-radio__button" name="course-summary-type" value="COUNT">
                   <span class="mdl-radio__label">Count</span>
                 </label>
               </div>
               <div class="col-sm-2">
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-avg">
-                  <input type="radio" id="summary-sum" class="mdl-radio__button" name="course-summary-type" value="sum">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-sum">
+                  <input type="radio" id="summary-sum" class="mdl-radio__button" name="course-summary-type" value="SUM">
                   <span class="mdl-radio__label">Sum</span>
                 </label>
               </div>
@@ -98,26 +98,53 @@
               <label class="col-sm-2 control-label">Data</label>
               <div class="col-sm-5">
                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-course-feedback">
-                  <input type="radio" id="summary-course-feedback" class="mdl-radio__button" name="summary-data" value="feedback" checked>
+                  <input type="radio" id="summary-course-feedback" class="mdl-radio__button" name="course-summary-data" value="feedback">
                   <span class="mdl-radio__label">Number of feedbacks</span>
                 </label>
               </div>
               <div class="col-sm-5">
                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-course-rate">
-                  <input type="radio" id="summary-course-rate" class="mdl-radio__button" name="summary-data" value="courseRate" checked>
+                  <input type="radio" id="summary-course-rate" class="mdl-radio__button" name="course-summary-data" value="courseRate" checked>
                   <span class="mdl-radio__label">Course rate</span>
                 </label>
               </div>
               <div class="col-sm-5 offset-sm-2">
                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-professor-rate">
-                  <input type="radio" id="summary-professor-rate" class="mdl-radio__button" name="summary-data" value="professorRate">
+                  <input type="radio" id="summary-professor-rate" class="mdl-radio__button" name="course-summary-data" value="professorRate">
                   <span class="mdl-radio__label">Professor rate</span>
                 </label>
               </div>
               <div class="col-sm-5">
                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="summary-ta-rate">
-                  <input type="radio" id="summary-ta-rate" class="mdl-radio__button" name="summary-data" value="taRate">
+                  <input type="radio" id="summary-ta-rate" class="mdl-radio__button" name="course-summary-data" value="taRate">
                   <span class="mdl-radio__label">TA rate</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Group by</label>
+              <div class="col-sm-5">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="summary-course">
+                  <input type="checkbox" id="summary-course" class="mdl-checkbox__input" name="course-summary-group" value="course_id" checked>
+                  <span class="mdl-checkbox__label">Course</span>
+                </label>
+              </div>
+              <div class="col-sm-5 offset-sm-2">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="summary-level">
+                  <input type="checkbox" id="summary-level" class="mdl-checkbox__input" name="course-summary-group" value="level">
+                  <span class="mdl-checkbox__label">Level</span>
+                </label>
+              </div>
+              <div class="col-sm-5">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="summary-dept">
+                  <input type="checkbox" id="summary-dept" class="mdl-checkbox__input" name="course-summary-group" value="dept">
+                  <span class="mdl-checkbox__label">Department</span>
+                </label>
+              </div>
+              <div class="col-sm-5">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="summary-term">
+                  <input type="checkbox" id="summary-term" class="mdl-checkbox__input" name="course-summary-group" value="semester">
+                  <span class="mdl-checkbox__label">Term</span>
                 </label>
               </div>
             </div>

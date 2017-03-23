@@ -3,3 +3,12 @@
     max-width: 896px;
     margin: auto;
 }
+
+#summary-table {
+    width: 100% !important;
+}
+
+#summary-table>tbody>tr>td {
+    white-space: normal;
+    vertical-align: middle !important;
+}
