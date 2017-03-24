@@ -91,7 +91,7 @@ CREATE TABLE Recommend (
     course_ID CHAR(14),
     professor_ID CHAR(9),
     recommendation VARCHAR(4000),
-    admin_ID CHAR(7),
+    admin_ID CHAR(9),
     complete DATE DEFAULT NULL,
     CONSTRAINT Recomend_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID) ON DELETE CASCADE,
     CONSTRAINT Recomend_FK_professor FOREIGN KEY (professor_ID) REFERENCES Professor(professor_ID),
