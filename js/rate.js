@@ -24,6 +24,12 @@ function rate() {
     var taComment = $('#ta-comment')[0].value;
     var taRate = $('#ta-rate-input')[0].value;
 
+    if (courseRate === '0' || professorRate === '0' || taRate === '0') {
+        if (!confirm('Submit? All ratings should be between 1 and 10.')) {
+            return;
+        }
+    }
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {

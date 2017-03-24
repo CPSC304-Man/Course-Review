@@ -68,11 +68,11 @@ CREATE TABLE RateCourse (
     course_ID CHAR(14),
     student_ID CHAR(8),
     courseComment VARCHAR(4000),
-    courseRate NUMBER,
+    courseRate NUMBER CHECK (courseRate BETWEEN 1 AND 10),
     professorComment VARCHAR(4000),
-    professorRate NUMBER,
+    professorRate NUMBER CHECK (professorRate BETWEEN 1 AND 10),
     taComment VARCHAR(4000),
-    taRate NUMBER,
+    taRate NUMBER CHECK (taRate BETWEEN 1 AND 10),
     CONSTRAINT RateCourse_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID) ON DELETE CASCADE,
     CONSTRAINT RateCourse_FK_student FOREIGN KEY (student_ID) REFERENCES Student(student_ID)
 );
