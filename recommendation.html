@@ -10,6 +10,8 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Optional theme -->
@@ -25,14 +27,14 @@
 
 
   <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/recommendation.css">
 </head>
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <!-- navigation bar -->
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout__title">Home</span>
+        <span class="mdl-layout__title">Recommendation</span>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation mdl-layout--large-screen-only">
           <a href="index.html" class="mdl-navigation__link">Home</a>
@@ -58,19 +60,17 @@
 
     <main class="mdl-layout__content">
       <div class="page-content">
-        <form>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="username">
-            <label class="mdl-textfield__label" for="username">Username</label>
-          </div>
-        </form>
+        <div id="recommendations" class="mdl-card mdl-shadow--4dp">
+          <button onclick="getRecommendations()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Get Recommendations</button>
 
-        <button onclick="connectDB()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Login</button>
+          <br>
+        </div>
       </div>
     </main>
   </div>
 
 
-  <script src="js/index.js"></script>
+  <script src="js/getUser.js"></script>
+  <script src="js/recommendation.js"></script>
 </body>
 </html>

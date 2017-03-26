@@ -1,0 +1,15 @@
+.mdl-card {
+    width: 100%;
+    max-width: 896px;
+    margin: auto;
+    padding: 16px;
+}
+
+#recommendation-table {
+    width: 100% !important;
+}
+
+#recommendation-table>tbody>tr>td {
+    white-space: normal;
+    vertical-align: middle !important;
+}
