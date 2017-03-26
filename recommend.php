@@ -23,7 +23,7 @@ if ($dbConnection['connect']) {
             "VALUES (SYS_GUID(), " .
             ":course_id, :professor_id, " .
             ":recommendation, " .
-            "'CPSCAdmin', NULL" .
+            "'', NULL" .
             ")";
     $variables[':course_id'] = $_POST['course_id'];
     $variables[':professor_id'] = $_POST['professor_id'];

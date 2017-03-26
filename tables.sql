@@ -99,6 +99,23 @@ CREATE TABLE Recommend (
 );
 
 
+CREATE TRIGGER Recommendation_Assign_Admin
+BEFORE INSERT ON Recommend
+FOR EACH ROW
+DECLARE
+    admin_id CHAR(9);
+BEGIN
+    SELECT a.admin_id INTO admin_id
+    FROM Admin a
+    WHERE a.dept = (
+        SELECT c.dept FROM Course c WHERE c.course_id = :NEW.course_id
+    );
+
+    :NEW.admin_id := admin_id;
+END;
+/
+
+
 INSERT INTO Professor VALUES ('P00000001', 'Hazra Imran');
 INSERT INTO Professor VALUES ('P00000002', 'Mike Feely');
 INSERT INTO Professor VALUES ('P00000003', 'Donal Acton');
