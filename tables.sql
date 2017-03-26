@@ -12,19 +12,19 @@ DROP TABLE Admin;
 
 CREATE TABLE Professor (
     professor_ID CHAR(9) PRIMARY KEY,
-    name VARCHAR(4000)
+    name VARCHAR(4000) NOT NULL
 );
 
 CREATE TABLE Student (
     student_ID CHAR(8) PRIMARY KEY,
-    name VARCHAR(4000),
-    email VARCHAR(4000),
-    dept CHAR(4)
+    name VARCHAR(4000) NOT NULL,
+    email VARCHAR(4000) NOT NULL,
+    dept CHAR(4) NOT NULL
 );
 
 CREATE TABLE TA (
     ta_ID CHAR(10) PRIMARY KEY,
-    name VARCHAR(4000)
+    name VARCHAR(4000) NOT NULL
 );
 
 CREATE TABLE Admin (
@@ -34,9 +34,9 @@ CREATE TABLE Admin (
 
 CREATE TABLE Course (
     course_ID CHAR(14) PRIMARY KEY,
-    dept CHAR(4),
-    code CHAR(4),
-    semester VARCHAR(20),
+    dept CHAR(4) NOT NULL,
+    code CHAR(4) NOT NULL,
+    semester VARCHAR(20) NOT NULL,
     professor_ID CHAR(9) NOT NULL,
     TA_ID CHAR(10) NOT NULL,
     average NUMBER,
@@ -48,8 +48,8 @@ CREATE TABLE Course (
 CREATE TABLE CourseDetails (
     dept CHAR(4),
     code CHAR(4),
-    name VARCHAR(100),
-    description VARCHAR(4000),
+    name VARCHAR(100) NOT NULL,
+    description VARCHAR(4000) NOT NULL,
     admin_ID CHAR(9) NOT NULL,
     nextReview DATE DEFAULT NULL,
     PRIMARY KEY (dept, code),
@@ -58,40 +58,40 @@ CREATE TABLE CourseDetails (
 
 CREATE TABLE ReviewCourse (
     course_ID CHAR(14) PRIMARY KEY,
-    rate_deadline DATE,
-    review_deadline DATE,
+    rate_deadline DATE NOT NULL,
+    review_deadline DATE NOT NULL,
     CONSTRAINT ReviewCourse_FK_course FOREIGN KEY (course_ID) REFERENCES Course(course_ID)
 );
 
 CREATE TABLE RateCourse (
     rate_course_ID RAW(32) PRIMARY KEY,
-    course_ID CHAR(14),
-    student_ID CHAR(8),
-    courseComment VARCHAR(4000),
-    courseRate NUMBER CHECK (courseRate BETWEEN 1 AND 10),
-    professorComment VARCHAR(4000),
-    professorRate NUMBER CHECK (professorRate BETWEEN 1 AND 10),
-    taComment VARCHAR(4000),
-    taRate NUMBER CHECK (taRate BETWEEN 1 AND 10),
+    course_ID CHAR(14) NOT NULL,
+    student_ID CHAR(8) NOT NULL,
+    courseComment VARCHAR(4000) NOT NULL,
+    courseRate NUMBER NOT NULL CHECK (courseRate BETWEEN 1 AND 10),
+    professorComment VARCHAR(4000) NOT NULL,
+    professorRate NUMBER NOT NULL CHECK (professorRate BETWEEN 1 AND 10),
+    taComment VARCHAR(4000) NOT NULL,
+    taRate NUMBER NOT NULL CHECK (taRate BETWEEN 1 AND 10),
     CONSTRAINT RateCourse_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID) ON DELETE CASCADE,
     CONSTRAINT RateCourse_FK_student FOREIGN KEY (student_ID) REFERENCES Student(student_ID)
 );
 
 CREATE TABLE Review (
     review_ID RAW(32) PRIMARY KEY,
-    course_ID CHAR(14),
-    professor_ID CHAR(9),
-    reviewComment VARCHAR(4000),
+    course_ID CHAR(14) NOT NULL,
+    professor_ID CHAR(9) NOT NULL,
+    reviewComment VARCHAR(4000) NOT NULL,
     CONSTRAINT Review_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID) ON DELETE CASCADE,
     CONSTRAINT Review_FK_professor FOREIGN KEY (professor_ID) REFERENCES Professor(professor_ID)
 );
 
 CREATE TABLE Recommend (
     recommend_ID RAW(32) PRIMARY KEY,
-    course_ID CHAR(14),
-    professor_ID CHAR(9),
-    recommendation VARCHAR(4000),
-    admin_ID CHAR(9),
+    course_ID CHAR(14) NOT NULL,
+    professor_ID CHAR(9) NOT NULL,
+    recommendation VARCHAR(4000) NOT NULL,
+    admin_ID CHAR(9) NOT NULL,
     complete DATE DEFAULT NULL,
     CONSTRAINT Recomend_FK_course FOREIGN KEY (course_ID) REFERENCES ReviewCourse(course_ID) ON DELETE CASCADE,
     CONSTRAINT Recomend_FK_professor FOREIGN KEY (professor_ID) REFERENCES Professor(professor_ID),
