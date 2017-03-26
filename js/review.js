@@ -125,6 +125,10 @@ function review() {
     }
 
     var reviewComment = $('#review-comment')[0].value;
+    if (reviewComment === '') {
+        alert('Please input the review comment.');
+        return;
+    }
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -169,6 +173,10 @@ function recommend() {
     }
 
     var recommendation = $('#recommendation')[0].value;
+    if (recommendation === '') {
+        alert('Please input the recommendation.');
+        return;
+    }
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {

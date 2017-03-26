@@ -23,6 +23,18 @@ function rate() {
     var professorRate = $('#professor-rate-input')[0].value;
     var taComment = $('#ta-comment')[0].value;
     var taRate = $('#ta-rate-input')[0].value;
+    if (courseComment === '') {
+        alert('Please input the course comment.');
+        return;
+    }
+    if (professorComment === '') {
+        alert('Please input the professor comment.');
+        return;
+    }
+    if (taComment === '') {
+        alert('Please input the TA comment.');
+        return;
+    }
 
     if (courseRate === '0' || professorRate === '0' || taRate === '0') {
         if (!confirm('Submit? All ratings should be between 1 and 10.')) {
