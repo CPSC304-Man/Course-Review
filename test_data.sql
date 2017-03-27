@@ -140,13 +140,20 @@ INSERT INTO RateCourse VALUES('10000001', 'CPSC121_2015W2', '00000002', 'What th
 
 
 
-/*review
-Review(course_ID, professor_ID, comment)
-*/
+INSERT INTO Review VALUES ('00000001', 'CPSC304_2016W2','P00000001','Great!');
+INSERT INTO Review VALUES ('00000002', 'CPSC304_2016W1', 'P00000001', 'Amazing!');
+INSERT INTO Review VALUES ('00000003', 'CPSC313_2016W2', 'P00000002', 'Wow!');
+INSERT INTO Review VALUES ('00000004', 'CPSC317_2016W2', 'P00000003', 'Incresible!');
+INSERT INTO Review VALUES ('00000005', 'COMM294_2016W2', 'P00000004', 'Spectacular!');
+INSERT INTO Review VALUES ('00000006', 'CPSC110_2016W1', 'P00000006', 'Magnificent!');
+INSERT INTO Review VALUES ('00000007', 'CPSC121_2016W2', 'P00000007', 'Exciting!');
+INSERT INTO Review VALUES ('00000008', 'CPSC121_2015W2', 'P00000008', 'Thrilling!');
 
-
-
-/*recommendation
-Recommend(course_ID, professor_ID, recommendation, admin_ID, complete)
-*/
-
+INSERT INTO Recommend VALUES ('00000001', 'CPSC304_2016W2', 'P00000001', 'Great!', 'CPSCAdmin', '');
+INSERT INTO Recommend VALUES ('00000002', 'CPSC304_2016W1', 'P00000001', 'Great!', 'CPSCAdmin', '');
+INSERT INTO Recommend VALUES ('00000003', 'CPSC313_2016W2', 'P00000002', 'Great!', 'CPSCAdmin', '');
+INSERT INTO Recommend VALUES ('00000004', 'CPSC317_2016W2', 'P00000003', 'Great!', 'CPSCAdmin', '');
+INSERT INTO Recommend VALUES ('00000005', 'COMM294_2016W2', 'P00000004', 'Great!', 'COMMAdmin', '');
+INSERT INTO Recommend VALUES ('00000006', 'CPSC110_2016W1', 'P00000006', 'Great!', 'CPSCAdmin', '');
+INSERT INTO Recommend VALUES ('00000007', 'CPSC121_2016W2', 'P00000007', 'Great!', 'CPSCAdmin', '');
+INSERT INTO Recommend VALUES ('00000008', 'CPSC121_2015W2', 'P00000008', 'Great!', 'CPSCAdmin', '');
