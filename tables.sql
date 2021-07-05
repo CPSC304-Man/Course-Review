@@ -347,6 +347,7 @@ INSERT INTO TA VALUES ('TA10000049', 'TA 49');
 
 INSERT INTO Admin VALUES ('CPSCAdmin', 'CPSC');
 INSERT INTO Admin VALUES ('COMMAdmin', 'COMM');
+INSERT INTO Admin VALUES ('STATAdmin', 'STAT');
 
 INSERT INTO Course VALUES ('CPSC304_2016W2', 'CPSC', '304', '2016 Winter Term 2', 'P00000001', 'TA00000001', '80.0');
 INSERT INTO Course VALUES ('CPSC304_2016W1', 'CPSC', '304', '2016 Winter Term 1', 'P00000001', 'TA00000001', '80.0');
@@ -356,6 +357,9 @@ INSERT INTO Course VALUES ('COMM294_2016W2', 'COMM', '294', '2016 Winter Term 2'
 INSERT INTO Course VALUES ('CPSC110_2016W1', 'CPSC', '110', '2016 Winter Term 1', 'P00000006', 'TA00000001', '55.0');
 INSERT INTO Course VALUES ('CPSC121_2016W2', 'CPSC', '121', '2016 Winter Term 2', 'P00000007', 'TA00000002', '70.0');
 INSERT INTO Course VALUES ('CPSC121_2015W2', 'CPSC', '121', '2015 Winter Term 2', 'P00000008', 'TA00000002', '75.0');
+INSERT INTO Course VALUES ('STAT302_2016W2', 'STAT', '302', '2016 Winter Term 2', 'P00000009', 'TA00000005', '78.0');
+INSERT INTO Course VALUES ('STAT200_2016W2', 'STAT', '200', '2016 Winter Term 2', 'P00000010', 'TA00000005', '70.0');
+INSERT INTO Course VALUES ('COMM101_2015W1', 'COMM', '101', '2016 Winter Term 2', 'P00000011', 'TA00000004', '79.0');
 
 
 
@@ -365,3 +369,6 @@ INSERT INTO CourseDetails VALUES ('CPSC', '317', 'Internet Computing', 'Internet
 INSERT INTO CourseDetails VALUES ('COMM', '294', 'Managerial Accounting', 'Managerial Accounting', 'COMMAdmin', NULL);
 INSERT INTO CourseDetails VALUES ('CPSC', '110', 'Computation, Programs, and Programming', 'Computation, Programs, and Programming', 'CPSCAdmin', NULL);
 INSERT INTO CourseDetails VALUES ('CPSC', '121', 'Models of Computation', 'Models of Computation', 'CPSCAdmin', NULL);
+INSERT INTO CourseDetails VALUES ('COMM', '101', 'Business Fundamentals', 'Business Fundamentals', 'COMMAdmin', NULL);
+INSERT INTO CourseDetails VALUES ('STAT', '302', 'Elementary Statistics for Applications', 'Elementary Statistics for Applications', 'STATAdmin', NULL);
+INSERT INTO CourseDetails VALUES ('STAT', '302', 'Introduction to Probability', 'Introduction to Probability', 'STATAdmin', NULL);
